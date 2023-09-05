@@ -165,3 +165,8 @@ Traceback (most recent call last):
   File "C:\Users\varta\sourabh-py-venv\Lib\site-packages\django\db\models\query.py", line 1444, in exclude
     return self._filter_or_exclude(True, args, kwargs)
 
+## CSRF Token
+We add CSRF token to the POST form to prevent cross-site request forgery (CSRF) attack
+
+Step 1: Django --> CSRF token --> Browser
+Step 2: Browser --> Form + CSRF token --> Django
