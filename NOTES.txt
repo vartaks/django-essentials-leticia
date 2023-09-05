@@ -170,3 +170,26 @@ We add CSRF token to the POST form to prevent cross-site request forgery (CSRF) 
 
 Step 1: Django --> CSRF token --> Browser
 Step 2: Browser --> Form + CSRF token --> Django
+
+## Make migrations for foreign key constraint for notes table to user table
+(sourabh-py-venv) C:\Users\varta\repos\django-essentials-leticia>python manage.py makemigrations
+It is impossible to add a non-nullable field 'user' to notes without specifying a default. This is because the database needs something to populate existing rows.
+Please select a fix:
+ 1) Provide a one-off default now (will be set on all existing rows with a null value for this column)
+ 2) Quit and manually define a default value in models.py.
+Select an option: 1
+Please enter the default value as valid Python.
+The datetime and django.utils.timezone modules are available, so it is possible to provide e.g. timezone.now as a value.
+Type 'exit' to exit this prompt
+>>> 1
+Migrations for 'notes':
+  notes\migrations\0002_notes_user.py
+    - Add field user to notes
+
+## Apply migrations
+(sourabh-py-venv) C:\Users\varta\repos\django-essentials-leticia>python manage.py migrate       
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, notes, sessions
+Running migrations:
+  Applying notes.0002_notes_user... OK
+
